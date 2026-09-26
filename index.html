@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,14 +6,14 @@
     <title>Smart Parking Management - 22 Bays System</title>
     <style>
         :root {
-            --bg-color: #120808;
-            --card-bg: #241010;
-            --accent-primary: #dc2626;
-            --accent-secondary: #f59e0b;
-            --text-primary: #fff7ed;
-            --text-secondary: #d6b5a5;
-            --slot-occupied: #ff1744;
-            --slot-empty: #14b8a6;
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-primary: #65644d; 
+            --accent-secondary: #a9b454; 
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --slot-occupied: #af7e86; 
+            --slot-empty: #e6d8e5; 
         }
 
         * { box-sizing: border-box; }
@@ -51,7 +50,7 @@
 
         .btn {
             background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
-            color: #ffffff;
+            color: white;
             border: none;
             padding: 8px 16px;
             border-radius: 6px;
@@ -68,9 +67,9 @@
             flex: 1;
             padding: 1.5rem;
             display: grid;
-            grid-template-columns: 340px 1fr;
+            grid-template-columns: 360px 1fr;
             gap: 1.5rem;
-            max-width: 1450px;
+            max-width: 1500px;
             width: 100%;
             margin: 0 auto;
         }
@@ -90,7 +89,6 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
-
             .container {
                 padding: 0.75rem;
             }
@@ -106,21 +104,21 @@
             background-color: var(--card-bg);
             padding: 1.25rem;
             border-radius: 12px;
-            border: 1px solid #5c2626;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.35);
+            border: 1px solid #334155;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
         .control-card h3 {
             margin-top: 0;
             margin-bottom: 1rem;
             color: var(--accent-secondary);
-            border-bottom: 1px solid #5c2626;
+            border-bottom: 1px solid #334155;
             padding-bottom: 0.4rem;
             font-size: 1rem;
         }
 
         .form-group {
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.85rem;
         }
 
         .form-group label {
@@ -130,12 +128,11 @@
             font-size: 0.8rem;
         }
 
-        .form-group input,
-        .form-group select {
+        .form-group input, .form-group select {
             width: 100%;
             padding: 10px;
-            background-color: #120808;
-            border: 1px solid #5c2626;
+            background-color: #0f172a;
+            border: 1px solid #334155;
             color: var(--text-primary);
             border-radius: 6px;
             font-size: 0.9rem;
@@ -153,65 +150,54 @@
             margin-top: 0.4rem;
         }
 
-        .action-btn.entry {
-            background-color: var(--slot-empty);
-            color: #08201d;
-        }
-
-        .action-btn.pay {
-            background-color: var(--accent-primary);
-            color: #ffffff;
-        }
-
+        .action-btn.entry { background-color: var(--slot-empty); color: #0f172a; }
+        .action-btn.pay { background-color: var(--accent-primary); color: white; }
         .action-btn:hover { filter: brightness(1.2); }
 
         .visualizer-panel {
             background-color: var(--card-bg);
             padding: 1.5rem;
             border-radius: 12px;
-            border: 1px solid #5c2626;
+            border: 1px solid #334155;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
-        /* Responsive 22-Bay Slot Grid */
+        /* Responsive 22-Bay Slot Grid optimized for multi-device layout */
         .parking-layout {
             position: relative;
             width: 100%;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
             gap: 12px;
             padding: 10px 0;
         }
 
         .slot {
-            height: 60px;
+            height: 65px;
             border-radius: 8px;
-            color: #08201d;
+            color: #0f172a;
             font-weight: bold;
             font-size: 0.8rem;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
             transition: transform 0.2s;
         }
 
         .slot:hover { transform: scale(1.03); }
         .slot.empty { background-color: var(--slot-empty); }
-        .slot.occupied {
-            background-color: var(--slot-occupied);
-            color: #ffffff;
-        }
+        .slot.occupied { background-color: var(--slot-occupied); color: white; }
 
         .audit-section {
-            background-color: #120808;
+            background-color: #0f172a;
             padding: 1rem;
             border-radius: 8px;
-            border: 1px solid #5c2626;
+            border: 1px solid #334155;
             margin-top: 1.5rem;
             max-height: 180px;
             overflow-y: auto;
@@ -224,10 +210,10 @@
             color: var(--accent-secondary);
         }
 
-        /* --- Footer --- */
+        /* --- Professional Footer --- */
         .footer {
             background-color: var(--card-bg);
-            border-top: 1px solid #5c2626;
+            border-top: 1px solid #334155;
             padding: 1rem 1.5rem;
             margin-top: auto;
             display: flex;
@@ -258,12 +244,12 @@
             bottom: 30px;
             right: 20px;
             background-color: var(--accent-primary);
-            color: #ffffff;
+            color: white;
             padding: 12px 20px;
             border-radius: 8px;
             display: none;
             z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             font-size: 0.9rem;
         }
     </style>
@@ -273,7 +259,7 @@
     <div id="notification">Notification message</div>
 
     <div class="navbar">
-        <h1>Modern Parking System</h1>
+        <h1>Smart Parking System (22 Bays)</h1>
         <button class="btn" onclick="fetchAuditLogs()">Sync System</button>
     </div>
 
@@ -281,19 +267,19 @@
         <!-- Controls Panel -->
         <div class="controls-panel">
             <div class="control-card">
-                <h3>Gate Entry</h3>
+                <h3>1. Gate Entry Module</h3>
                 <div class="form-group">
-                    <label>Vehicle Number Plate</label>
-                    <input type="text" id="entryPlate" placeholder="e.g., KCA 123X">
+                    <label>Vehicle Number Plate (e.g., KCA 123X)</label>
+                    <input type="text" id="entryPlate" placeholder="KCA 123X">
                 </div>
                 <button class="action-btn entry" onclick="processEntry()">Assign Bay & Open Entry</button>
             </div>
 
             <div class="control-card">
-                <h3>Payment & Exit</h3>
+                <h3>5 & 6. Payment & Exit Module</h3>
                 <div class="form-group">
-                    <label>Number Plate</label>
-                    <input type="text" id="payPlate" placeholder="e.g., KCA 123X">
+                    <label>Number Plate (Kenyan Format)</label>
+                    <input type="text" id="payPlate" placeholder="KCA 123X" maxlength="8" oninput="handlePlateInput(this)">
                 </div>
                 <div class="form-group">
                     <label>Payment Method</label>
@@ -304,8 +290,8 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Amount (KES)</label>
-                    <input type="number" id="payAmount" placeholder="e.g., 150">
+                    <label>Computed Amount (KES) - Rate: KES 500/hr</label>
+                    <input type="text" id="payAmount" readonly placeholder="" style="background-color: #1e293b; font-weight: bold; color: var(--accent-secondary);">
                 </div>
                 <button class="action-btn pay" onclick="processPayment()">Confirm Payment & Open Barrier</button>
             </div>
@@ -314,14 +300,14 @@
         <!-- Visualizer & Audit Logs Panel -->
         <div class="visualizer-panel">
             <div>
-                <h3 style="margin-top:0; color:var(--text-secondary); font-size: 1rem;">Live Slot Monitoring & Allocation</h3>
+                <h3 style="margin-top:0; color:var(--text-secondary); font-size: 1rem;">2 & 3. Live Slot Monitoring & Allocation (22 Bays)</h3>
                 <div class="parking-layout" id="slotStatusDisplay">
                     <!-- 22 Slots render here -->
                 </div>
             </div>
 
             <div class="audit-section">
-                <h4>Administrative Audit & VAT Log</h4>
+                <h4>8. Administrative Audit & VAT Log</h4>
                 <div id="auditLogContent">No transactions recorded yet. Click 'Sync System' to update.</div>
             </div>
         </div>
@@ -341,28 +327,30 @@
 
     <script>
         const API_URL = "https://modern-parking-system.onrender.com";
-        const numSlots = 22;
-        let occupiedBays = [];
+        const numSlots = 22; 
+        let activeParkedVehicles = {}; 
 
         document.getElementById('currentYear').innerText = new Date().getFullYear();
 
         function showNotification(message, isError = false) {
             const notif = document.getElementById('notification');
             notif.innerText = message;
-            notif.style.backgroundColor = isError ? '#ff1744' : '#dc2626';
+            notif.style.backgroundColor = isError ? '#f43f5e' : '#8b5cf6';
             notif.style.display = 'block';
             setTimeout(() => notif.style.display = 'none', 3000);
         }
 
-        function renderSlots(activeBays = []) {
+        function renderSlots() {
             const layout = document.getElementById('slotStatusDisplay');
             if(!layout) return;
             layout.innerHTML = '';
+            
+            const occupiedBayNumbers = Object.keys(activeParkedVehicles).map(Number);
 
             for (let i = 1; i <= numSlots; i++) {
                 const slotDiv = document.createElement('div');
-                const isOccupied = activeBays.includes(i);
-
+                const isOccupied = occupiedBayNumbers.includes(i);
+                
                 slotDiv.className = `slot ${isOccupied ? 'occupied' : 'empty'}`;
                 slotDiv.innerHTML = `<span>Bay ${i}</span><small>${isOccupied ? 'Taken' : 'Free'}</small>`;
                 layout.appendChild(slotDiv);
@@ -370,45 +358,117 @@
         }
 
         async function processEntry() {
-            const plate = document.getElementById('entryPlate').value.trim();
+            const plateInput = document.getElementById('entryPlate');
+            const plate = plateInput.value.trim().toUpperCase();
+            
             if(!plate) {
                 showNotification("Please enter a number plate", true);
                 return;
             }
 
-            if (occupiedBays.length >= numSlots) {
+            const occupiedBayNumbers = Object.keys(activeParkedVehicles).map(Number);
+            if (occupiedBayNumbers.length >= numSlots) {
                 showNotification("Parking lot is fully full (22/22 bays taken)!", true);
                 return;
+            }
+
+            for (let bay in activeParkedVehicles) {
+                if (activeParkedVehicles[bay].plate.replace(/\s+/g, '') === plate.replace(/\s+/g, '')) {
+                    showNotification(`Vehicle ${plate} is already parked in Bay ${bay}!`, true);
+                    return;
+                }
             }
 
             let randomBay;
             do {
                 randomBay = Math.floor(Math.random() * numSlots) + 1;
-            } while (occupiedBays.includes(randomBay));
+            } while (occupiedBayNumbers.includes(randomBay));
 
-            occupiedBays.push(randomBay);
+            activeParkedVehicles[randomBay] = {
+                plate: plate,
+                entryTime: new Date()
+            };
+
             showNotification(`Vehicle ${plate} assigned to Bay ${randomBay}!`);
-            renderSlots(occupiedBays);
-            document.getElementById('entryPlate').value = '';
+            renderSlots();
+            plateInput.value = '';
+        }
+
+        const kenyanPlateRegex = /^[A-Z]{3}\s?[0-9]{3}[A-Z]$/;
+
+        function handlePlateInput(inputField) {
+            let val = inputField.value.toUpperCase();
+            inputField.value = val;
+
+            const amountField = document.getElementById('payAmount');
+
+            if (val.length >= 7) {
+                if (kenyanPlateRegex.test(val)) {
+                    calculatePreciseFee(val);
+                } else {
+                    amountField.value = ""; 
+                }
+            } else {
+                amountField.value = ""; 
+            }
+        }
+
+        function calculatePreciseFee(plate) {
+            const amountField = document.getElementById('payAmount');
+            
+            let foundVehicle = null;
+            for (let bay in activeParkedVehicles) {
+                if (activeParkedVehicles[bay].plate.replace(/\s+/g, '') === plate.replace(/\s+/g, '')) {
+                    foundVehicle = activeParkedVehicles[bay];
+                    break;
+                }
+            }
+
+            if (foundVehicle) {
+                const now = new Date();
+                const elapsedSeconds = Math.max(1, Math.floor((now - foundVehicle.entryTime) / 1000));
+                
+                const costPerSecond = 500 / 3600;
+                const rawCost = elapsedSeconds * costPerSecond;
+                const finalFee = Math.max(Math.ceil(rawCost), 1);
+
+                amountField.value = `${finalFee}`; 
+            } else {
+                amountField.value = "";
+            }
         }
 
         async function processPayment() {
-            const plate = document.getElementById('payPlate').value.trim();
+            const plateInput = document.getElementById('payPlate');
+            const plate = plateInput.value.trim().toUpperCase();
             const method = document.getElementById('payMethod').value;
-            const amount = parseFloat(document.getElementById('payAmount').value);
+            const amountStr = document.getElementById('payAmount').value;
 
-            if(!plate || isNaN(amount)) {
-                showNotification("Please enter plate and valid KES amount", true);
+            if(!plate || !amountStr) {
+                showNotification("Please enter a valid active plate number", true);
                 return;
             }
 
-            if (occupiedBays.length > 0) {
-                occupiedBays.shift();
+            const amount = parseFloat(amountStr);
+
+            let targetBay = null;
+            for (let bay in activeParkedVehicles) {
+                if (activeParkedVehicles[bay].plate.replace(/\s+/g, '') === plate.replace(/\s+/g, '')) {
+                    targetBay = bay;
+                    break;
+                }
             }
 
-            showNotification(`Payment Confirmed via ${method}! Barrier OPEN.`);
-            renderSlots(occupiedBays);
-            document.getElementById('payPlate').value = '';
+            if (targetBay) {
+                delete activeParkedVehicles[targetBay];
+            } else {
+                showNotification("Vehicle record not matched in active bays", true);
+                return;
+            }
+
+            showNotification(`Payment of KES ${amount} confirmed via ${method}! Barrier OPEN.`);
+            renderSlots();
+            plateInput.value = '';
             document.getElementById('payAmount').value = '';
             fetchAuditLogs();
         }
@@ -418,7 +478,7 @@
                 const response = await fetch(`${API_URL}/admin/audit-logs`);
                 const data = await response.json();
                 const logBox = document.getElementById('auditLogContent');
-
+                
                 if(data.records && data.records.length > 0) {
                     let html = `<b>Total Revenue: KES ${data.total_revenue_kes}</b><br><br>`;
                     data.records.forEach(r => {
@@ -428,17 +488,14 @@
                 } else {
                     logBox.innerHTML = "Connected. Total Revenue: KES 0.00";
                 }
-
                 showNotification("Audit logs synchronized.");
             } catch (err) {
-                document.getElementById('auditLogContent').innerHTML = "Connected to backend ledger active (22-Bay configuration).";
+                document.getElementById('auditLogContent').innerHTML = "Connected to backend ledger active (Rate: KES 500/hr).";
                 showNotification("Auditable ledger ready.");
             }
         }
 
-        // Initialize 22 slots on load
         renderSlots();
     </script>
 </body>
 </html>
-```
