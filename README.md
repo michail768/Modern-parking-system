@@ -4,7 +4,7 @@ An intelligent, real-time parking management solution designed to handle automat
 
 ---
 
-## 🚀 Module Algorithms
+## Module Algorithms
 
 ### 1. Slot Display Module
 * **Algorithm**: Iterates sequentially through slot keys to generate the current availability mapping.
@@ -27,7 +27,7 @@ An intelligent, real-time parking management solution designed to handle automat
 
 ---
 
-## 🛠️ Data Structures & Performance Rationale
+## Data Structures & Performance Rationale
 
 | Data Structure | Variable / Object | Time Complexity | Justification |
 | :--- | :--- | :--- | :--- |
@@ -36,7 +36,7 @@ An intelligent, real-time parking management solution designed to handle automat
 
 ---
 
-## 🗄️ Database Design (Schema Concept)
+## Database Design (Schema Concept)
 
 ### 1. `Slots`
 * **`slot_id`** *(Primary Key)* — Unique identifier for each parking bay.
